@@ -1,0 +1,42 @@
+C:\Users\Rohit Rathi\Desktop\interview project\temp\obj\Debug\netcoreapp2.1\temp.csprojAssemblyReference.cache
+C:\Users\Rohit Rathi\Desktop\interview project\temp\obj\Debug\netcoreapp2.1\temp.csproj.CoreCompileInputs.cache
+C:\Users\Rohit Rathi\Desktop\interview project\temp\obj\Debug\netcoreapp2.1\temp.RazorAssemblyInfo.cache
+C:\Users\Rohit Rathi\Desktop\interview project\temp\obj\Debug\netcoreapp2.1\temp.RazorAssemblyInfo.cs
+C:\Users\Rohit Rathi\Desktop\interview project\temp\obj\Debug\netcoreapp2.1\temp.AssemblyInfoInputs.cache
+C:\Users\Rohit Rathi\Desktop\interview project\temp\obj\Debug\netcoreapp2.1\temp.AssemblyInfo.cs
+C:\Users\Rohit Rathi\Desktop\interview project\temp\bin\Debug\netcoreapp2.1\temp.deps.json
+C:\Users\Rohit Rathi\Desktop\interview project\temp\bin\Debug\netcoreapp2.1\temp.runtimeconfig.json
+C:\Users\Rohit Rathi\Desktop\interview project\temp\bin\Debug\netcoreapp2.1\temp.runtimeconfig.dev.json
+C:\Users\Rohit Rathi\Desktop\interview project\temp\bin\Debug\netcoreapp2.1\temp.dll
+C:\Users\Rohit Rathi\Desktop\interview project\temp\bin\Debug\netcoreapp2.1\temp.pdb
+C:\Users\Rohit Rathi\Desktop\interview project\temp\obj\Debug\netcoreapp2.1\temp.RazorTargetAssemblyInfo.cache
+C:\Users\Rohit Rathi\Desktop\interview project\temp\obj\Debug\netcoreapp2.1\temp.dll
+C:\Users\Rohit Rathi\Desktop\interview project\temp\obj\Debug\netcoreapp2.1\temp.pdb
+C:\Users\Rohit Rathi\Desktop\new interview project\authentication\backEnd\temp\bin\Debug\netcoreapp2.1\temp.deps.json
+C:\Users\Rohit Rathi\Desktop\new interview project\authentication\backEnd\temp\bin\Debug\netcoreapp2.1\temp.runtimeconfig.json
+C:\Users\Rohit Rathi\Desktop\new interview project\authentication\backEnd\temp\bin\Debug\netcoreapp2.1\temp.runtimeconfig.dev.json
+C:\Users\Rohit Rathi\Desktop\new interview project\authentication\backEnd\temp\bin\Debug\netcoreapp2.1\temp.dll
+C:\Users\Rohit Rathi\Desktop\new interview project\authentication\backEnd\temp\bin\Debug\netcoreapp2.1\temp.pdb
+C:\Users\Rohit Rathi\Desktop\new interview project\authentication\backEnd\temp\obj\Debug\netcoreapp2.1\temp.csprojAssemblyReference.cache
+C:\Users\Rohit Rathi\Desktop\new interview project\authentication\backEnd\temp\obj\Debug\netcoreapp2.1\temp.csproj.CoreCompileInputs.cache
+C:\Users\Rohit Rathi\Desktop\new interview project\authentication\backEnd\temp\obj\Debug\netcoreapp2.1\temp.RazorAssemblyInfo.cache
+C:\Users\Rohit Rathi\Desktop\new interview project\authentication\backEnd\temp\obj\Debug\netcoreapp2.1\temp.RazorAssemblyInfo.cs
+C:\Users\Rohit Rathi\Desktop\new interview project\authentication\backEnd\temp\obj\Debug\netcoreapp2.1\temp.AssemblyInfoInputs.cache
+C:\Users\Rohit Rathi\Desktop\new interview project\authentication\backEnd\temp\obj\Debug\netcoreapp2.1\temp.AssemblyInfo.cs
+C:\Users\Rohit Rathi\Desktop\new interview project\authentication\backEnd\temp\obj\Debug\netcoreapp2.1\temp.RazorTargetAssemblyInfo.cache
+C:\Users\Rohit Rathi\Desktop\new interview project\authentication\backEnd\temp\obj\Debug\netcoreapp2.1\temp.dll
+C:\Users\Rohit Rathi\Desktop\new interview project\authentication\backEnd\temp\obj\Debug\netcoreapp2.1\temp.pdb
+C:\Users\Rohit Rathi\Desktop\new interview project\newNoInterviewProject\newNoInterview\bin\Debug\netcoreapp2.1\temp.deps.json
+C:\Users\Rohit Rathi\Desktop\new interview project\newNoInterviewProject\newNoInterview\bin\Debug\netcoreapp2.1\temp.runtimeconfig.json
+C:\Users\Rohit Rathi\Desktop\new interview project\newNoInterviewProject\newNoInterview\bin\Debug\netcoreapp2.1\temp.runtimeconfig.dev.json
+C:\Users\Rohit Rathi\Desktop\new interview project\newNoInterviewProject\newNoInterview\bin\Debug\netcoreapp2.1\temp.dll
+C:\Users\Rohit Rathi\Desktop\new interview project\newNoInterviewProject\newNoInterview\bin\Debug\netcoreapp2.1\temp.pdb
+C:\Users\Rohit Rathi\Desktop\new interview project\newNoInterviewProject\newNoInterview\obj\Debug\netcoreapp2.1\temp.csprojAssemblyReference.cache
+C:\Users\Rohit Rathi\Desktop\new interview project\newNoInterviewProject\newNoInterview\obj\Debug\netcoreapp2.1\temp.csproj.CoreCompileInputs.cache
+C:\Users\Rohit Rathi\Desktop\new interview project\newNoInterviewProject\newNoInterview\obj\Debug\netcoreapp2.1\temp.RazorAssemblyInfo.cache
+C:\Users\Rohit Rathi\Desktop\new interview project\newNoInterviewProject\newNoInterview\obj\Debug\netcoreapp2.1\temp.RazorAssemblyInfo.cs
+C:\Users\Rohit Rathi\Desktop\new interview project\newNoInterviewProject\newNoInterview\obj\Debug\netcoreapp2.1\temp.AssemblyInfoInputs.cache
+C:\Users\Rohit Rathi\Desktop\new interview project\newNoInterviewProject\newNoInterview\obj\Debug\netcoreapp2.1\temp.AssemblyInfo.cs
+C:\Users\Rohit Rathi\Desktop\new interview project\newNoInterviewProject\newNoInterview\obj\Debug\netcoreapp2.1\temp.RazorTargetAssemblyInfo.cache
+C:\Users\Rohit Rathi\Desktop\new interview project\newNoInterviewProject\newNoInterview\obj\Debug\netcoreapp2.1\temp.dll
+C:\Users\Rohit Rathi\Desktop\new interview project\newNoInterviewProject\newNoInterview\obj\Debug\netcoreapp2.1\temp.pdb
