@@ -59,7 +59,7 @@ namespace sample
 
                 if (getPair.Result.Response != null)
                 {
-                    
+                    //TokenManager.KeyGenerator();   
                     string secret = System.Text.Encoding.UTF8.GetString(getPair.Result.Response.Value);
                     Chilkat.Rsa rsaExportedPrivateKey = new Chilkat.Rsa();
                     rsaExportedPrivateKey.ImportPrivateKey(secret);
@@ -77,10 +77,11 @@ namespace sample
                     var getPair1 = client.KV.Get("myPrivateKey");
 
                     string secret = System.Text.Encoding.UTF8.GetString(getPair1.Result.Response.Value);
+                    
                     Chilkat.Rsa rsaExportedPrivateKey = new Chilkat.Rsa();
                     rsaExportedPrivateKey.ImportPrivateKey(secret);
                     
-                   // token = jwt.CreateJwtPk(jwtHeader.Emit(), claims.Emit(), rsaExportedPrivateKey.ExportPrivateKeyObj());
+                    token = jwt.CreateJwtPk(jwtHeader.Emit(), claims.Emit(), rsaExportedPrivateKey.ExportPrivateKeyObj());
                     Console.WriteLine("newly created token with no token already present in consul =" + token);
 
                 }
@@ -163,11 +164,16 @@ namespace sample
             using (var client = new ConsulClient())
             {
                 client.Config.Address = new Uri("http://172.23.238.173:8500");
+                
+
                 var putPair = new KVPair("myPublicKey")
                 {
                     Value = Encoding.UTF8.GetBytes(rsaPublicKeyAsString)
 
                 };
+
+                var putAttempt = client.KV.Put(putPair);
+                
 
                 var putPair1 = new KVPair("myPrivateKey")
                 {
@@ -175,9 +181,9 @@ namespace sample
 
                 };
 
-                var putAttempt = client.KV.Put(putPair);
-                var putAttempt1 = client.KV.Put(putPair1);                
-
+                var putAttempt1 = client.KV.Put(putPair1);
+                                
+                
             }
 
 

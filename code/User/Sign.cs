@@ -24,6 +24,16 @@ namespace sample
 
     }
 
+    public class socialSignIn
+    {
+        public string email;
+        public string id;
+        public string image;
+        public string name;
+        public string provider;
+    }
+
+
 
 
 }

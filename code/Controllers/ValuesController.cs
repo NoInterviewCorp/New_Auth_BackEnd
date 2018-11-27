@@ -37,6 +37,31 @@ namespace temp.Controllers
 
         }
 
+
+
+        [HttpPost]
+
+        [Route("/socialSignIn")]
+
+        public string SocialSignIn(socialSignIn signIn)
+        {
+            if (ModelState.IsValid)
+            {
+                                
+                var token = TokenManager.GenerateToken(signIn.email); 
+                return token;
+               
+            }
+            else
+            {
+                return "Invalid state";
+            }
+            
+            
+           
+        }
+
+
         
         [HttpPost]
 
