@@ -1,7 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace sample
+//namespace sample
+namespace JwtTokenSpace
 {
     public class signIn
     {

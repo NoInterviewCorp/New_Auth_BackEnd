@@ -15,13 +15,14 @@ using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 
 
-namespace sample
+//namespace sample
+namespace JwtTokenSpace
 {
     public class TokenManager
     {
 
         // This method is resposible of generating JWT token
-        public static string GenerateToken(string Email)
+        public async static Task<string> GenerateTokenAsync(string Email)
         {
             Chilkat.Global glob = new Chilkat.Global();
             glob.UnlockBundle("Anything for 30-day trial");
@@ -62,7 +63,7 @@ namespace sample
                 }
                 else
                 {
-                    TokenManager.KeyGenerator(client);
+                    await TokenManager.KeyGeneratorAsync(client);
                     var getPair1 = client.KV.Get("myPrivateKey");
 
                     string secret = System.Text.Encoding.UTF8.GetString(getPair1.Result.Response.Value);
@@ -78,7 +79,8 @@ namespace sample
             }
 
             //jwt.AutoCompact = true;
-            return JsonConvert.SerializeObject(token);
+            //return JsonConvert.SerializeObject(token);
+            return token;
 
 
         }
@@ -88,7 +90,7 @@ namespace sample
 
 
         // This method is responsible for generating public and private key if keys are not present in consul
-        public static void KeyGenerator(ConsulClient client)
+        public static async System.Threading.Tasks.Task KeyGeneratorAsync(ConsulClient client)
         {
             
             Chilkat.Global glob = new Chilkat.Global();
@@ -108,6 +110,7 @@ namespace sample
                 Value = Encoding.UTF8.GetBytes(rsaPublicKeyAsString)
 
             };
+            var putAttempt = await client.KV.Put(putPair);
 
 
             var putPair1 = new KVPair("myPrivateKey")
@@ -115,10 +118,7 @@ namespace sample
                 Value = Encoding.UTF8.GetBytes(rsaPrivKeyAsString)
 
             };
-
-            var putAttempt = client.KV.Put(putPair);
-
-            var putAttempt1 = client.KV.Put(putPair1);
+            var putAttempt1 = await client.KV.Put(putPair1);
 
 
 

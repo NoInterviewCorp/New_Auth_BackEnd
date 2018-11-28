@@ -3,7 +3,8 @@ using System.Linq;
 using System.Security.Cryptography;
 using System;
 
-namespace sample
+//namespace sample
+namespace JwtTokenSpace
 {
 
     public class UserRepository : IUserRepository

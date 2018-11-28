@@ -10,9 +10,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using sample;
+using JwtTokenSpace;
 
-namespace temp
+//namespace temp
+namespace JwtTokenSpace
 {
     public class Startup
     {

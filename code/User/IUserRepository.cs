@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 
-namespace sample
+//namespace sample
+namespace JwtTokenSpace
 {
 
     public interface IUserRepository

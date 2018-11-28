@@ -4,9 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using sample;
+using JwtTokenSpace;
 
-namespace temp.Controllers
+//namespace temp.Controllers
+namespace JwtTokenSpace
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -26,13 +27,13 @@ namespace temp.Controllers
 
         [Route("/socialSignIn")]
 
-        public string SocialSignIn(socialSignIn signIn)
+        public async Task<string> SocialSignInAsync(socialSignIn signIn)
         {
             if (ModelState.IsValid)
             {
                                 
-                var token = TokenManager.GenerateToken(signIn.email); 
-                return token;
+                var token = await TokenManager.GenerateTokenAsync(signIn.email); 
+                return JsonConvert.SerializeObject(token);
                
             }
             else
@@ -50,7 +51,7 @@ namespace temp.Controllers
 
         [Route("/signIn")]
 
-        public string SignIn(signIn signIn)
+        public async Task<string> SignInAsync(signIn signIn)
         {
             if (ModelState.IsValid)
             {
@@ -69,8 +70,8 @@ namespace temp.Controllers
                 }
                 else
                 { 
-                     var token = TokenManager.GenerateToken(signIn.email); 
-                    return token;
+                     var token = await TokenManager.GenerateTokenAsync(signIn.email); 
+                    return JsonConvert.SerializeObject(token);
                 }
                 
         
