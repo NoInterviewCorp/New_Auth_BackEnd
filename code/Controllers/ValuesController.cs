@@ -37,7 +37,7 @@ namespace temp.Controllers
 
         }
 
-
+        // This post api handles the social login through facebook and google
 
         [HttpPost]
 
@@ -61,7 +61,7 @@ namespace temp.Controllers
            
         }
 
-
+        // This post handles the local server signIn part
         
         [HttpPost]
 
@@ -101,6 +101,7 @@ namespace temp.Controllers
            
         }
 
+        // This post method handles the local server signUp part
 
         [HttpPost]
 

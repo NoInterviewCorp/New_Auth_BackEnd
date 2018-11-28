@@ -19,15 +19,9 @@ namespace sample
 {
     public class TokenManager
     {
-
-        //private static string publicKey;
-        //private static string privateKey;
-
-        //HMACSHA256 hmac = new HMACSHA256();
-        //string key = Convert.ToBase64String(hmac.Key);
         private static string Secret1 = "XCAP05H6LoKvbRRa/QkqLNMI7cOHguaRyHzyg7n5qEkGjQmtBhz4SzYh4Fqwjyi3KJHlSXKPwVu2+bXr6CtpgQ==";
-        //private static string token="";
-
+        
+        // This method is resposible of generating JWT token
         public static string GenerateToken(string Email)
         {
             Chilkat.Global glob = new Chilkat.Global();
@@ -41,13 +35,10 @@ namespace sample
 
             Chilkat.JsonObject claims = new Chilkat.JsonObject();
             claims.AppendString("Email", Email);
-            //claims.AddIntAt(-1,"exp",DateTime.UtcNow.AddMinutes(20));
-
 
             Chilkat.Jwt jwt = new Chilkat.Jwt();
             int curDateTime = jwt.GenNumericDate(0);
             claims.AddIntAt(-1, "exp", curDateTime + 720);
-
 
 
             using (var client = new ConsulClient())
@@ -65,14 +56,10 @@ namespace sample
                     var rsaPrivKey = rsaExportedPrivateKey.ExportPrivateKeyObj();
 
                     token = jwt.CreateJwtPk(jwtHeader.Emit(), claims.Emit(), rsaPrivKey);
-                    Console.WriteLine("newly created token =" + token);
-
-                    Console.WriteLine("Getting Back the Stored String");
-                    Console.WriteLine(Encoding.UTF8.GetString(getPair.Result.Response.Value, 0, getPair.Result.Response.Value.Length));
+                    
                 }
                 else
                 {
-
                     TokenManager.KeyGenerator(client);
                     var getPair1 = client.KV.Get("myPrivateKey");
 
@@ -82,30 +69,11 @@ namespace sample
                     rsaExportedPrivateKey.ImportPrivateKey(secret);
 
                     token = jwt.CreateJwtPk(jwtHeader.Emit(), claims.Emit(), rsaExportedPrivateKey.ExportPrivateKeyObj());
-                    Console.WriteLine("newly created token with no token already present in consul =" + token);
-
+                    
                 }
 
-
-                var getpair2 = client.KV.Get("myPublicKey");
-                if (getpair2.Result.Response != null)
-                {
-                    string secret = System.Text.Encoding.UTF8.GetString(getpair2.Result.Response.Value);
-                    Chilkat.Rsa rsaExportedPublicKey = new Chilkat.Rsa();
-                    rsaExportedPublicKey.ImportPublicKey(secret);
-
-                    if (jwt.VerifyJwtPk(token, rsaExportedPublicKey.ExportPublicKeyObj()))
-                    {
-                        Console.WriteLine("the token is verifieddddddddddddddddddddddddddddddddddddddddddddd");
-                    }
-
-                    // token = jwt.CreateJwtPk(jwtHeader.Emit(), claims.Emit(), rsaExportedPublicKey.ExportPublicKeyObj());
-                    // Console.WriteLine("newly created token =" + token);
-
-                }
 
             }
-
 
             //jwt.AutoCompact = true;
             return JsonConvert.SerializeObject(token);
@@ -144,9 +112,11 @@ namespace sample
             }
         }
 
+
+        // This method is responsible for generating public and private key if keys are not present in consul
         public static void KeyGenerator(ConsulClient client)
         {
-            Console.WriteLine("Entered in key generatorrrrrrrrrrrrrrrrrrrrrrrrrr");
+            
             Chilkat.Global glob = new Chilkat.Global();
             glob.UnlockBundle("Anything for 30-day trial");
 
@@ -155,12 +125,9 @@ namespace sample
             rsaKey.GenerateKey(1024);
             var rsaPrivKey = rsaKey.ExportPrivateKeyObj();
             var rsaPrivKeyAsString = rsaKey.ExportPrivateKey();
-            Console.WriteLine("PrivateKey= " + rsaPrivKeyAsString);
 
             var rsaPublicKey = rsaKey.ExportPublicKeyObj();
             var rsaPublicKeyAsString = rsaKey.ExportPublicKey();
-            Console.WriteLine("PublicKey= " + rsaPublicKeyAsString);
-
 
             var putPair = new KVPair("myPublicKey")
             {
