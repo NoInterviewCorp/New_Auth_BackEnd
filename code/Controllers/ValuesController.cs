@@ -18,24 +18,7 @@ namespace temp.Controllers
         {
             this.IUserobj = UserRepository;
         }
-        // GET api/values
-        [HttpGet]
-        public IActionResult Get([FromHeader]string token)
-        {
-
-            var value = TokenManager.ValidateMyToken(token);
-
-            if (value == null)
-            {
-                return Unauthorized();
-            }
-
-            else
-            {
-                return Ok("access granted");
-            }
-
-        }
+       
 
         // This post api handles the social login through facebook and google
 

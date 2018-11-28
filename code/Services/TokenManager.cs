@@ -19,8 +19,7 @@ namespace sample
 {
     public class TokenManager
     {
-        private static string Secret1 = "XCAP05H6LoKvbRRa/QkqLNMI7cOHguaRyHzyg7n5qEkGjQmtBhz4SzYh4Fqwjyi3KJHlSXKPwVu2+bXr6CtpgQ==";
-        
+
         // This method is resposible of generating JWT token
         public static string GenerateToken(string Email)
         {
@@ -29,18 +28,21 @@ namespace sample
 
             string token = "";
 
+            //Creating JWT header using chilkat
             Chilkat.JsonObject jwtHeader = new Chilkat.JsonObject();
             jwtHeader.AppendString("alg", "RS256");
             jwtHeader.AppendString("typ", "JWT");
 
+            //Adding Token claims
             Chilkat.JsonObject claims = new Chilkat.JsonObject();
             claims.AppendString("Email", Email);
 
+            //Adding Token Expiration time
             Chilkat.Jwt jwt = new Chilkat.Jwt();
             int curDateTime = jwt.GenNumericDate(0);
             claims.AddIntAt(-1, "exp", curDateTime + 720);
 
-
+            //Ading consul for putting and getting public and private key
             using (var client = new ConsulClient())
             {
                 client.Config.Address = new Uri("http://172.23.238.173:8500");
@@ -82,35 +84,7 @@ namespace sample
         }
 
 
-        public static ClaimsPrincipal ValidateMyToken(string token)
-        {
-            try
-            {
-                JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
-                JwtSecurityToken jwtToken = (JwtSecurityToken)tokenHandler.ReadToken(token);
-
-                if (jwtToken == null)
-                    return null;
-
-                byte[] key = Convert.FromBase64String(Secret1);
-
-                TokenValidationParameters parameters = new TokenValidationParameters()
-                {
-                    RequireExpirationTime = true,
-                    ValidateIssuer = false,
-                    ValidateAudience = false,
-                    IssuerSigningKey = new SymmetricSecurityKey(key)
-                };
-
-                SecurityToken securityToken;
-                ClaimsPrincipal principal = tokenHandler.ValidateToken(token, parameters, out securityToken);
-                return principal;
-            }
-            catch (Exception e)
-            {
-                return null;
-            }
-        }
+        
 
 
         // This method is responsible for generating public and private key if keys are not present in consul
