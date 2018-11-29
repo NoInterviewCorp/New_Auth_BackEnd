@@ -12,7 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using JwtTokenSpace;
 
-//namespace temp
+
 namespace JwtTokenSpace
 {
     public class Startup

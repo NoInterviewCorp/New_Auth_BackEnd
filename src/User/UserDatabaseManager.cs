@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
 
-//namespace sample
+
 namespace JwtTokenSpace
 {
     public class UserDatabaseManager :IUserRepository

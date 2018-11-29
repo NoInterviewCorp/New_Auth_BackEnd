@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 
 
-//namespace sample
+
 namespace JwtTokenSpace
 {
 

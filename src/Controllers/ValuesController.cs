@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using JwtTokenSpace;
 
-//namespace temp.Controllers
+
 namespace JwtTokenSpace
 {
     [Route("api/[controller]")]

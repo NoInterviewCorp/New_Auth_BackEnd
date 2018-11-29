@@ -15,7 +15,7 @@ using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 
 
-//namespace sample
+
 namespace JwtTokenSpace
 {
     public class TokenManager
