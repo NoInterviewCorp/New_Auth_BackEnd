@@ -29,8 +29,8 @@ namespace JwtTokenSpace
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddScoped<IUserRepository,UserRepository>();
-            //services.AddScoped<IUserRepository,UserDatabaseManager>();
+            //services.AddScoped<IUserRepository,UserRepository>();
+            services.AddScoped<IUserRepository,UserDatabaseManager>();
             services.AddDbContext<UserDatabase>();
             services.AddCors();
             
