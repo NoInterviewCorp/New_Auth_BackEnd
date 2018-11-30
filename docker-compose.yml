@@ -1,17 +1,10 @@
 version: '3'
 services:
-  db:
-    image: "microsoft/mssql-server-linux"
-    ports:
-        - "1433"
-    environment:
-      SA_PASSWORD: "password123"
-      ACCEPT_EULA: "Y"
   web:
     build:
       context: ./src
     ports:
-        - "5000:5000"
+      - "5000:5000"
     depends_on:
       - db
     expose:
@@ -25,3 +18,10 @@ services:
       - "SERVICE_TAGS=AuthenticationTag"
     volumes:
       - "/machine_config:/app/machine_config"
+  db:
+    image: "microsoft/mssql-server-linux"
+    ports:
+      - "1433"
+    environment:
+      SA_PASSWORD: "password123"
+      ACCEPT_EULA: "Y"
