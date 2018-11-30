@@ -18,7 +18,7 @@ namespace JwtTokenSpace
 
         {
 
-            optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=UserDatabase;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=MyUserDatabase;Trusted_Connection=True;");
 
            // optionsBuilder.UseSqlServer(@"Server=db;Database=UserDataBase;User=SA;Password=password123;");
 

@@ -2,7 +2,7 @@
 
 namespace temp.Migrations
 {
-    public partial class UserDatabase : Migration
+    public partial class MyUserDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
