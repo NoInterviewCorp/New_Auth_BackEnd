@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 services:
   web:
     build:
@@ -11,7 +11,7 @@ services:
       - "5000"
     
     environment:
-      SQLSERVER_HOST: "Server=db;Database=userDB;User=SA;Password=password123;"
+      SQLSERVER_HOST: "Server=db;Database=MyUserDatabase;User=SA;Password=AlquidA@9826;"
       
     labels:
       - "SERVICE_5000_NAME=Authentication"
@@ -23,5 +23,5 @@ services:
     ports:
       - "1433"
     environment:
-      SA_PASSWORD: "password123"
+      SA_PASSWORD: "AlquidA@9826"
       ACCEPT_EULA: "Y"

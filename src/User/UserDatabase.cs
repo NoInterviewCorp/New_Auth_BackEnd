@@ -15,12 +15,10 @@ namespace JwtTokenSpace
         public DbSet<User> users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-
-        {
-
-            optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=MyUserDatabase;Trusted_Connection=True;");
-
-           // optionsBuilder.UseSqlServer(@"Server=db;Database=UserDataBase;User=SA;Password=password123;");
+	{
+		var connstring1 = "Server=localhost;Database=MyUserDatabase;User=SA;Password=password123";
+            	var connstring = Environment.GetEnvironmentVariable("SQLSERVER_HOST") ?? connstring1;
+            	optionsBuilder.UseSqlServer (connstring);
 
         }
     }
