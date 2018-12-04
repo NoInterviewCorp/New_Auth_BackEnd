@@ -1,4 +1,4 @@
-version: '2'
+version: '3.5'
 services:
   web:
     build:
@@ -11,13 +11,16 @@ services:
       - "5000"
     
     environment:
-      SQLSERVER_HOST: "Server=db;Database=MyUserDatabase;User=SA;Password=AlquidA@9826;"
+      SQLSERVER_HOST: "Server=db;Database=MyUserDatabase1;User=SA;Password=AlquidA@9826;"
       
     labels:
       - "SERVICE_5000_NAME=Authentication"
       - "SERVICE_TAGS=AuthenticationTag"
     volumes:
       - "/machine_config:/app/machine_config"
+    networks: 
+      - authentication-network
+
   db:
     image: "microsoft/mssql-server-linux"
     ports:
@@ -25,3 +28,11 @@ services:
     environment:
       SA_PASSWORD: "AlquidA@9826"
       ACCEPT_EULA: "Y"
+    networks: 
+      - authentication-network
+
+networks: 
+  authentication-network:
+    name: potentiometer-network
+    external: true        
+

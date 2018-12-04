@@ -31,8 +31,10 @@ namespace JwtTokenSpace
         {
             if (ModelState.IsValid)
             {
-                                
-                var token = await TokenManager.GenerateTokenAsync(signIn.email); 
+
+                // signIn.id=Guid.NewGuid().ToString("N");
+                signIn.id=IUserobj.GenerateUserId(signIn.email);                
+                var token = await TokenManager.GenerateTokenAsync(signIn.email,signIn.name,signIn.id); 
                 return JsonConvert.SerializeObject(token);
                
             }
@@ -70,7 +72,7 @@ namespace JwtTokenSpace
                 }
                 else
                 { 
-                     var token = await TokenManager.GenerateTokenAsync(signIn.email); 
+                     var token = await TokenManager.GenerateTokenAsync(u.Email,u.FullName,u.UserId); 
                     return JsonConvert.SerializeObject(token);
                 }
                 
@@ -110,6 +112,8 @@ namespace JwtTokenSpace
                     newUser.Email = signUp.email;
                     newUser.Password = IUserobj.Hash(signUp.password);
                     // newUser.Password= signUp.password;
+                    // newUser.UserId= Guid.NewGuid().ToString("N");
+                    newUser.UserId= IUserobj.GenerateUserId(signUp.email);
                     newUser.FullName = signUp.fullName;
                     IUserobj.Register(newUser);
                     string x = "Success";

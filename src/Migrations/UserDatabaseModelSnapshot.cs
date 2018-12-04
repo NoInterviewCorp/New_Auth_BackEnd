@@ -28,6 +28,8 @@ namespace temp.Migrations
                     b.Property<string>("Password")
                         .IsRequired();
 
+                    b.Property<string>("UserId");
+
                     b.HasKey("Email");
 
                     b.ToTable("users");

@@ -2,7 +2,7 @@
 
 namespace temp.Migrations
 {
-    public partial class MyUserDatabase : Migration
+    public partial class MyUserDatabase1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,6 +11,7 @@ namespace temp.Migrations
                 columns: table => new
                 {
                     Email = table.Column<string>(nullable: false),
+                    UserId = table.Column<string>(nullable: true),
                     Password = table.Column<string>(nullable: false),
                     FullName = table.Column<string>(nullable: false)
                 },

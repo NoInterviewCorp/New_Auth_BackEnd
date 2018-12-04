@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace temp.Migrations
 {
     [DbContext(typeof(UserDatabase))]
-    [Migration("20181130142326_MyUserDatabase")]
-    partial class MyUserDatabase
+    [Migration("20181204133601_MyUserDatabase1")]
+    partial class MyUserDatabase1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -29,6 +29,8 @@ namespace temp.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired();
+
+                    b.Property<string>("UserId");
 
                     b.HasKey("Email");
 

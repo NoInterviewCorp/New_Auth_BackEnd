@@ -22,7 +22,7 @@ namespace JwtTokenSpace
     {
 
         // This method is resposible of generating JWT token
-        public async static Task<string> GenerateTokenAsync(string Email)
+        public async static Task<string> GenerateTokenAsync(string Email, string FullName,string UserId )
         {
             Chilkat.Global glob = new Chilkat.Global();
             glob.UnlockBundle("Anything for 30-day trial");
@@ -37,6 +37,8 @@ namespace JwtTokenSpace
             //Adding Token claims
             Chilkat.JsonObject claims = new Chilkat.JsonObject();
             claims.AppendString("Email", Email);
+            claims.AppendString("FullName", FullName);
+            claims.AppendString("UserId", UserId);
 
             //Adding Token Expiration time
             Chilkat.Jwt jwt = new Chilkat.Jwt();
@@ -46,6 +48,9 @@ namespace JwtTokenSpace
             //Ading consul for putting and getting public and private key
             using (var client = new ConsulClient())
             {
+                // string ConsulIpHost = "http://consul:8500";
+                // client.Config.Address = new Uri(ConsulIpHost);
+
                 client.Config.Address = new Uri("http://172.23.238.173:8500");
 
                 var getPair = client.KV.Get("myPrivateKey");

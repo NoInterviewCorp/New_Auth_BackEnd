@@ -12,6 +12,8 @@ namespace JwtTokenSpace
 
          void Register(User obj);
 
+         string GenerateUserId(string email);
+
 
         
         
