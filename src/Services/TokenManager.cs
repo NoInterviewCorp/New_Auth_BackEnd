@@ -48,10 +48,10 @@ namespace JwtTokenSpace
             //Ading consul for putting and getting public and private key
             using (var client = new ConsulClient())
             {
-                // string ConsulIpHost = "http://consul:8500";
-                // client.Config.Address = new Uri(ConsulIpHost);
+                string ConsulIpHost = "http://consul:8500";
+                client.Config.Address = new Uri(ConsulIpHost);
 
-                client.Config.Address = new Uri("http://172.23.238.173:8500");
+                // client.Config.Address = new Uri("http://172.23.238.173:8500");
 
                 var getPair = client.KV.Get("myPrivateKey");
 
