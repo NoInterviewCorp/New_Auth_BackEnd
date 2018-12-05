@@ -15,7 +15,7 @@ services:
       
     labels:
       - "SERVICE_5000_NAME=Authentication"
-      - "SERVICE_TAGS=AuthenticationTag"
+      - "SERVICE_TAGS=Authentication_Backend"
     volumes:
       - "/machine_config:/app/machine_config"
     networks: 
