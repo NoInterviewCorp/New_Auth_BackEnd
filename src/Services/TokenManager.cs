@@ -43,7 +43,7 @@ namespace JwtTokenSpace
             //Adding Token Expiration time
             Chilkat.Jwt jwt = new Chilkat.Jwt();
             int curDateTime = jwt.GenNumericDate(0);
-            claims.AddIntAt(-1, "exp", curDateTime + 720);
+            claims.AddIntAt(-1, "exp", curDateTime + 9000);
 
             //Ading consul for putting and getting public and private key
             using (var client = new ConsulClient())
