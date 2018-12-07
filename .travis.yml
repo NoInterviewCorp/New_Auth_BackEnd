@@ -9,4 +9,7 @@ mono: none
 dotnet: 2.1
 script:
   - dotnet restore
+  - dotnet build
   - dotnet test BackEnd_TestCases
+after-success:
+  - /bin/bash ./deploy.sh  
